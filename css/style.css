@@ -1,14 +1,21 @@
+/* Google Fonts에서 Gowun Dodum 글꼴 불러오기 */
 @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
 
+
+/* 모든 HTML 페이지의 <body> 내부 글꼴에 적용 */
 body {
     font-family: "Gowun Dodum", sans-serif;
 }
 
+
+/* 모든 HTML 요소에 기본 글자색과 배경색 적용 */
 * {
     color: #222222;
     background-color: #f5f9ff;
 }
 
+
+/* 모든 페이지의 <h1> 제목에 적용 */
 h1 {
     color: #1d4ed8;
     font-size: 36px;
@@ -16,6 +23,8 @@ h1 {
     border: 3px solid #1d4ed8;
 }
 
+
+/* 모든 페이지의 <h2> 제목에 적용 */
 h2 {
     color: #2563eb;
     font-size: 26px;
@@ -23,16 +32,22 @@ h2 {
     border-bottom: 2px solid #93c5fd;
 }
 
+
+/* 모든 페이지의 <a> 링크에 적용 */
 a {
     color: #7c3aed;
     text-decoration: none;
 }
 
+
+/* <a> 링크에 마우스를 올렸을 때 적용 */
 a:hover {
     color: #db2777;
     text-decoration: underline;
 }
 
+
+/* <div class="container">로 감싼 페이지 전체 영역에 적용 */
 .container {
     width: 80%;
     margin: 30px auto;
@@ -41,6 +56,8 @@ a:hover {
     border-radius: 15px;
 }
 
+
+/* myTrip.html의 <p class="trip-card"> 여행 카드에 적용 */
 .trip-card {
     width: 330px;
     padding: 15px;
@@ -49,6 +66,8 @@ a:hover {
     border-radius: 12px;
 }
 
+
+/* <p class="trip-card"> 안에 있는 <img> 여행 사진에 적용 */
 .trip-card img {
     width: 100%;
     height: auto;
@@ -56,13 +75,15 @@ a:hover {
 }
 
 
-/* 미션 2 - 3단계: 강의 시간표 꾸미기 */
+/* myClass.html의 <table> 시간표 전체에 적용 */
 table {
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
 }
 
+
+/* 시간표의 <th> 요일 및 시간 제목 셀에 적용 */
 th {
     background-color: #dbeafe;
     color: #1e3a8a;
@@ -70,8 +91,137 @@ th {
     border: 1px solid #93c5fd;
 }
 
+
+/* 시간표의 <td> 강의 내용 셀에 적용 */
 td {
     padding: 12px;
     border: 1px solid #93c5fd;
     text-align: center;
+}
+
+
+/*
+signUp.html의 <form class="signup-form"> 안에 있는
+텍스트, 이메일, 비밀번호, 전화번호, 날짜 입력창,
+<select> 선택 상자와 <textarea> 자기소개 입력창에 적용
+*/
+.signup-form input[type="text"],
+.signup-form input[type="email"],
+.signup-form input[type="password"],
+.signup-form input[type="tel"],
+.signup-form input[type="date"],
+.signup-form select,
+.signup-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 6px 0 15px;
+    border: 1px solid #b6c8e5;
+    box-sizing: border-box;
+}
+
+
+/* <p class="email-area"> 바로 아래의 이메일 <label>에 적용 */
+.email-area > label {
+    display: block;
+    margin-bottom: 6px;
+}
+
+
+/*
+<span class="email-row"> 안의
+이메일 아이디 입력창, @ 기호, 도메인 입력창을 가로로 정렬
+*/
+.email-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+/* <input class="email-id"> 이메일 아이디 입력창에 적용 */
+.signup-form .email-row .email-id {
+    flex: 2;
+    width: auto;
+    min-width: 0;
+    margin: 0;
+}
+
+
+/* <input class="email-domain"> 이메일 도메인 입력창에 적용 */
+.signup-form .email-row .email-domain {
+    flex: 1;
+    width: auto;
+    min-width: 0;
+    margin: 0;
+}
+
+
+/* <span class="email-row"> 안에 있는 @ 기호에 적용 */
+.email-row > span {
+    flex-shrink: 0;
+    font-weight: bold;
+}
+
+
+/* <form class="signup-form"> 안의 모든 <fieldset> 영역에 적용 */
+.signup-form fieldset {
+    margin: 20px 0;
+    padding: 20px;
+    border: 2px solid #93c5fd;
+    border-radius: 12px;
+}
+
+
+/*
+<fieldset> 안의 <legend> 제목에 적용
+예: 계정 정보, 개인 프로필 정보, 자기소개
+*/
+.signup-form legend {
+    color: #1d4ed8;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+
+/*
+회원가입 폼의
+<input type="submit"> 회원가입 버튼과
+<input type="reset"> 다시 작성 버튼에 공통 적용
+*/
+.signup-form input[type="submit"],
+.signup-form input[type="reset"] {
+    padding: 12px 25px;
+    margin: 10px 5px 0 0;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+/* <input type="submit"> 동의하고 회원가입 버튼에 적용 */
+.signup-form input[type="submit"] {
+    color: white;
+    background-color: #2563eb;
+}
+
+
+/* <input type="reset"> 다시 작성 버튼에 적용 */
+.signup-form input[type="reset"] {
+    color: #333333;
+    background-color: #dbeafe;
+}
+
+
+/* 회원가입 버튼에 마우스를 올렸을 때 적용 */
+.signup-form input[type="submit"]:hover {
+    background-color: #1d4ed8;
+}
+
+
+/* 다시 작성 버튼에 마우스를 올렸을 때 적용 */
+.signup-form input[type="reset"]:hover {
+    background-color: #bfdbfe;
 }

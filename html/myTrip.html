@@ -25,6 +25,8 @@
                     width="310"
                     height="155"
                     alt="코난 해변"
+                    class="clickable-image"
+                    onclick="openImageModal(this.src, this.alt)"
                 >
                 <br>
                 코난 해변
@@ -38,6 +40,8 @@
                     width="310"
                     height="155"
                     alt="제주바다목장"
+                    class="clickable-image"
+                    onclick="openImageModal(this.src, this.alt)"
                 >
                 <br>
                 제주바다목장
@@ -51,6 +55,8 @@
                     width="310"
                     height="155"
                     alt="삼양해수욕장"
+                    class="clickable-image"
+                    onclick="openImageModal(this.src, this.alt)"
                 >
                 <br>
                 삼양해수욕장
@@ -93,5 +99,33 @@
         </section>
 
     </div>
+
+    <!-- 여행 사진 원본을 크게 보여주는 모달 창 -->
+    <div
+        id="imageModal"
+        class="image-modal"
+        aria-hidden="true"
+        onclick="closeImageModal(event)"
+    >
+        <button
+            type="button"
+            class="image-modal-close"
+            onclick="closeImageModal()"
+            aria-label="사진 닫기"
+        >
+            &times;
+        </button>
+
+        <img
+            id="modalImage"
+            class="image-modal-content"
+            src=""
+            alt=""
+        >
+
+        <p id="modalCaption" class="image-modal-caption"></p>
+    </div>
+
+    <script src="../script/imageModal.js"></script>
 </body>
 </html>

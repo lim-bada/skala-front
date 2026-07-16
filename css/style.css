@@ -5,15 +5,27 @@
 /* 모든 HTML 페이지의 <body> 내부 글꼴에 적용 */
 body {
     font-family: "Gowun Dodum", sans-serif;
+    background-color: #f5f9ff;
 }
 
 
 /* 모든 HTML 요소에 기본 글자색과 배경색 적용 */
 * {
     color: #222222;
-    background-color: #f5f9ff;
 }
 
+/* 모든 페이지의 <mark> 강조 글자에 적용 */
+mark {
+    background-color: #fde68a;
+    padding: 2px 5px;
+    border-radius: 4px;
+}
+
+/* 모든 페이지의 <b> 굵은 글자에 적용 */
+b {
+    font-weight: 900;
+    color: #000000;
+}
 
 /* 모든 페이지의 <h1> 제목에 적용 */
 h1 {
@@ -92,6 +104,91 @@ a:hover {
     border-radius: 8px;
 }
 
+/* 클릭할 수 있는 여행 사진 */
+.clickable-image {
+    cursor: zoom-in;
+}
+
+
+/* 여행 사진 모달의 전체 배경 */
+.image-modal {
+    display: none;
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 1000;
+
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+
+/* 모달이 열렸을 때 적용 */
+.image-modal.show {
+    display: flex;
+}
+
+
+/* 모달 안에 표시되는 원본 사진 */
+.image-modal-content {
+    max-width: 90%;
+    max-height: 80%;
+
+    width: auto;
+    height: auto;
+
+    border-radius: 10px;
+    background-color: transparent;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+
+/* 모달 오른쪽 위의 닫기 버튼 */
+.image-modal-close {
+    position: absolute;
+
+    top: 20px;
+    right: 30px;
+
+    padding: 5px 15px;
+    border: none;
+
+    color: white;
+    background-color: transparent;
+
+    font-family: inherit;
+    font-size: 45px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+/* 닫기 버튼에 마우스를 올렸을 때 */
+.image-modal-close:hover {
+    color: #bfdbfe;
+}
+
+
+/* 모달 사진 아래의 사진 이름 */
+.image-modal-caption {
+    margin-top: 15px;
+
+    color: white;
+    background-color: transparent;
+
+    font-size: 18px;
+    font-weight: bold;
+}
 
 /* myClass.html의 <table> 시간표 전체에 적용 */
 table {
@@ -395,6 +492,43 @@ signUp.html의 <form class="signup-form"> 안에 있는
     transform: translateY(-2px);
 }
 
+/* index.html의 미니 게임 영역 */
+.mini-game {
+    margin-top: 25px;
+}
+
+/* 업다운 게임 실행 버튼 */
+.game-button {
+    width: 100%;
+    padding: 14px 18px;
+    border: none;
+    border-radius: 10px;
+
+    color: white;
+    background-color: #2563eb;
+
+    font-family: inherit;
+    font-size: 17px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: background-color 0.3s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+/* 업다운 게임 버튼에 마우스를 올렸을 때 */
+.game-button:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* 미니 게임 버튼 사이의 간격 */
+.mini-game .game-button {
+    margin-bottom: 12px;
+}
 
 /* 제목이 아래쪽에서 위로 올라오며 나타나는 애니메이션 */
 @keyframes fade-in-title {
@@ -408,8 +542,6 @@ signUp.html의 <form class="signup-form"> 안에 있는
         transform: translateY(0);
     }
 }
-
-
 
 /* 화면 너비가 786px 이하일 때 index.html의 모바일 화면에 적용 */
 @media screen and (max-width: 786px) {

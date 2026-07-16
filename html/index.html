@@ -9,6 +9,8 @@
     <script src="../script/upDown.js" defer></script>
     <script src="../script/grade.js" defer></script>
     <script src="../script/bag.js" defer></script>
+    
+    <script type="module" src="../script/realtimeInfo.js"></script>
 </head>
 
 <body>
@@ -71,6 +73,28 @@
                 <section>
                     <h2>🌤️ 실시간 정보</h2>
                     <p>현재 위치: 광주광역시 광산구 🗺️</p>
+                </section>
+
+                <hr>
+
+                <!-- 새로 추가할 도시 정보 영역 -->
+                <section class="weather-section">
+                    <h2>🌤️ 실시간 세계 날씨</h2>
+
+                    <label for="city-select">도시 선택:</label>
+
+                    <select id="city-select">
+                        <option value="none">도시를 선택해 주세요</option>
+                        <option value="35.16,126.85">광주광역시 KR</option>
+                        <option value="37.57,126.98">서울특별시 KR</option>
+                        <option value="33.50,126.53">제주시 KR</option>
+                        <option value="48.85,2.35">프랑스 파리 FR</option>
+                        <option value="35.68,139.69">일본 도쿄 JP</option>
+                    </select>
+
+                    <div id="weather-box">
+                        <p>도시를 선택하면 날씨가 표시됩니다.</p>
+                    </div>
                 </section>
 
                 <hr>

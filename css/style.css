@@ -56,14 +56,20 @@ a:hover {
     border-radius: 15px;
 }
 
+/* myTrip.html의 여행 카드 전체를 3열 Grid로 배치 */
+.trip-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
 
 /* myTrip.html의 <p class="trip-card"> 여행 카드에 적용 */
 .trip-card {
-    width: 330px;
     padding: 15px;
-    margin: 20px 0;
+    margin: 0;
     border: 2px solid #93c5fd;
     border-radius: 12px;
+    box-sizing: border-box;
 }
 
 
@@ -224,4 +230,86 @@ signUp.html의 <form class="signup-form"> 안에 있는
 /* 다시 작성 버튼에 마우스를 올렸을 때 적용 */
 .signup-form input[type="reset"]:hover {
     background-color: #bfdbfe;
+}
+
+/* index.html의 <ul class="shortcut-menu"> 바로가기 메뉴 */
+.shortcut-menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 0;
+    list-style: none;
+}
+
+/* 바로가기 메뉴의 각 <li> 항목 */
+.shortcut-menu li {
+    margin: 0;
+}
+
+/* index.html의 main과 aside를 가로로 배치하는 영역 */
+.main-layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+/* main-layout 안의 <main> 주요 콘텐츠 영역 */
+.main-layout main {
+    flex: 3;
+    min-width: 0;
+}
+
+/* main-layout 안의 <aside> 실시간 정보 영역 */
+.main-layout aside {
+    flex: 1;
+    min-width: 200px;
+    padding: 0;
+    
+}
+
+/* 화면 너비가 786px 이하일 때 index.html의 모바일 화면에 적용 */
+@media screen and (max-width: 786px) {
+
+    /* 모바일에서 전체 콘텐츠 박스의 폭과 여백 조절 */
+    .container {
+        width: 95%;
+        padding: 15px;
+        margin: 15px auto;
+        box-sizing: border-box;
+    }
+
+    /* 바로가기 메뉴를 가로 배치에서 세로 1열 배치로 변경 */
+    .shortcut-menu {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* main과 aside를 가로 배치에서 세로 1열 배치로 변경 */
+    .main-layout {
+        flex-direction: column;
+    }
+
+    /* 모바일에서 main이 한 줄 전체를 사용하도록 설정 */
+    .main-layout main {
+        width: 100%;
+    }
+
+    /* 모바일에서 aside도 한 줄 전체를 사용하도록 설정 */
+    .main-layout aside {
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+
+    /* index.html의 이미지가 화면 밖으로 벗어나지 않도록 설정 */
+    .main-layout img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* myTrip.html의 여행 카드 Grid를 3열에서 1열로 변경 */
+    .trip-grid {
+        grid-template-columns: 1fr;
+    }    
 }
